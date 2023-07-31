@@ -1,0 +1,50 @@
+.landingnav {
+    background: #272727;
+    display: flex;
+    width: 100%;
+    height: 66px;
+    justify-content: center;
+}
+
+.landingnav__list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    padding: 0;
+    margin-top: 24px;
+}
+
+.landingnav__link {
+    color: white;
+    display: flex;
+    text-decoration: none;
+    border-bottom: 1px white solid;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    cursor: pointer;
+    transition: opacity .08s linear;
+}
+
+.landingnav__link:hover {
+    opacity: .70;
+    transition: opacity .1s linear;
+}
+
+@media screen and (max-width: 325px) {
+    .landingnav__link {
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 16px;
+        border-bottom: none;
+    }
+
+    .landingnav__list {
+        gap: 24px;
+    }
+    
+    .landingnav__element {
+        height: 14px;
+        border-bottom: 1px white solid;
+    }
+}

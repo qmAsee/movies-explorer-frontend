@@ -1,0 +1,214 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    background: #202020;
+    width: 100%;
+    height: 608px;
+    padding-top: 110px;
+    align-items: center;
+    box-sizing: border-box;
+    
+}
+
+.about__title {
+    margin: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    display: block;
+    width: calc(100% - 70px * 2);
+    height: 50px;
+    border-bottom: #DADADA 1px solid;
+}
+
+.about__diploma {
+    display: grid;
+    max-width: calc(100% - 70px * 2);
+    grid-template-rows: repeat(2, minmax(min-content, max-content));
+    grid-template-columns: repeat(2, minmax(min-content, max-content));
+    row-gap: 26px;
+    column-gap: 22px;
+    margin-top: 70px;
+}
+
+.about__tracker {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 1140px;
+    margin-top: 110px;
+    width: calc(100% - 70px * 2);
+}
+
+.about__line_grey {
+    display: flex;
+    height: 36px;
+    background: #303030;
+    align-items: center;
+    justify-content: center;
+    color:  white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 14px;
+}
+
+.about__line_green {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    height: 36px;
+    background: #3DDC84;
+    margin-bottom: 14px;
+}
+
+.about__techs {
+    margin: 0;
+    color: #8B8B8B;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+}
+
+.about__subtitle {
+    display: flex;
+    margin: 0;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.8px;
+}
+
+.about__text {
+    display: flex;
+    margin: 0;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .about {
+        padding-top: 90px;
+        height: 585px;
+    }
+
+    .about__diploma {
+        row-gap: 22px;
+        column-gap: 30px;
+        max-width: calc(100% - 50px * 2);
+    }
+
+    .about__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about__title {
+        width: calc(100% - 50px * 2);
+        height: 50px;
+    }
+
+    .about__tracker {
+        width: calc(100% - 50px * 2);
+        margin-top: 93px;
+        grid-template-columns: 140px 4fr;
+    }
+
+    .about__techs {
+        font-weight: 400;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+
+}
+
+@media screen and (max-width: 465px) {
+    .about {
+        height: 641px;
+    }
+
+    .about__diploma {
+        grid-template-rows: repeat(4, minmax(min-content, max-content));
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #about-diploma:nth-of-type(2) {
+        order: 2;
+    }
+
+    .about__tracker {
+        grid-template-columns: 100px 4fr;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .about{
+        padding-top: 70px;
+    }
+    
+    .about__title {
+        height: 48px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.72px;  
+        width: calc(100% - 18px * 2);
+    }
+
+    .about__diploma {
+        margin-top: 61px;
+        display: flex;
+        flex-direction: column;
+        max-width: calc(100% - 18px * 2);
+        gap: 0;
+    }
+
+    #about-diploma:nth-child(3) {
+        margin-bottom: 56px;
+    }
+
+    .about__subtitle {
+        font-size: 18px;
+        letter-spacing: -0.72px;
+        margin-bottom: 18px;
+    }
+
+    .about__text {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about__tracker {
+        width: calc(100% - 18px * 2);
+        margin-top: 60px;
+    }
+
+    .about__line_grey {
+        font-size: 11px;
+        height: 35px;
+        margin-bottom: 8px;
+    }
+    
+    .about__line_green {
+        font-size: 11px;
+        height: 35px;
+        margin-bottom: 8px;
+    }
+
+    .about__techs {
+        font-size: 11px;
+        font-weight: 400;
+        line-height: normal;
+    }
+}

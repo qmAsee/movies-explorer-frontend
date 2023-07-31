@@ -1,0 +1,48 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+
+@import url(./components/Header/Header.css);
+@import url(./components/NavigationUnauth/NavigationUnauth.css);
+@import url(./components/NavigationAuth/NavigationAuth.css);
+
+@import url(./components/PromoPage/PromoPage.css);
+@import url(./components/LandingNav/LandingNav.css);
+
+@import url(./components/About/About.css);
+
+@import url(./components/Techs/Techs.css);
+
+@import url(./components/Student/Student.css);
+
+@import url(./components/Footer/Footer.css);
+
+@import url(./components/SearchArea/SearchArea.css);
+
+@import url(./components/FilterCheckbox/FilterCheckbox.css);
+
+@import url(./components/Movies/Movies.css);
+@import url(./components/MoviesCard/MoviesCard.css);
+
+@import url(./components/Account/Account.css);
+
+@import url(./components/SignUp/SignUp.css);
+
+@import url(./components/SignIn/SignIn.css);
+
+@import url(./components/NotFoundPage/NotFoundPage.css);
+
+@import url(./components/Sidebar/Sidebar.css);
+
+.page {
+  font-family: 'Inter', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background: #202020;
+}
+
+#root {
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+}

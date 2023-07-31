@@ -1,0 +1,111 @@
+import React from 'react';
+
+import { Link } from 'react-router-dom';
+
+// const useInput = (initialValue) => {
+//     const [value, setValue] = React.useState(initialValue);
+
+//     const onChange
+// }
+
+export default function SignUp() {
+
+    const [name, setName] = React.useState('')
+    const [nameDirty, setNameDirty] = React.useState(false)
+    const [nameError, setNameError] = React.useState('Имя не может быть пустым')
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+    const [emailDirty, setEmailDirty] = React.useState(false)
+    const [passwordDirty, setPasswordDirty] = React.useState(false)
+    const [emailError, setEmailError] = React.useState('Поле E-mail не может быть пустым')
+    const [passwordError, setPasswordError] = React.useState('Пароль не может быть пустым')
+    const [formValid, setFormValid] = React.useState(false)
+
+    React.useEffect(() => {
+        if (emailError || passwordError || nameError) {
+            setFormValid(false)
+        } else {
+            setFormValid(true)
+        }
+    }, [emailError, passwordError, nameError])
+
+    const nameHandler = (e) => {
+        setName(e.target.value)
+
+        if (e.target.value.length < 2) {
+            setNameError('Имя не может быть короче 2 символов')
+        } else if (!e.target.value) {
+            setNameError('Поле не может быть пустым')
+        } else {
+            setNameError('')
+        }
+    }
+
+    const emailHandler = (e) => {
+        setEmail(e.target.value);
+
+        const emailRexExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+        if (!emailRexExp.test(String(e.target.value).toLowerCase())) {
+            setEmailError('Некорректный E-mail')
+        } else {
+            setEmailError('')
+        }
+    }
+
+    const passwordHandler = (e) => {
+        setPassword(e.target.value)
+
+        if (e.target.value.length < 6 || e.target.value.length > 30) {
+            setPasswordError('Пароль не должен быть короче 6 символов и длиннее 30 символов')
+            if (!e.target.value) {
+                setPasswordError('Пароль не может быть пустым')
+            }
+        } else {
+            setPasswordError('')
+        }
+    }
+
+    const blurHandler = (e) => {
+        switch (e.target.name) {
+            case 'email':
+                setEmailDirty(true)
+                break
+            case 'password':
+                setPasswordDirty(true)
+                break
+            case 'name':
+                setNameDirty(true)
+                break
+        }
+    }
+
+    return (
+        <section className='signup'>
+            <div className='signup__header'>
+                <Link to='/' className="header__logo"></Link> 
+                <h1 className='signup__title'>Добро пожаловать!</h1>
+            </div>
+            <form className='signup__form'>
+
+                <label className='signup__label'>Имя</label>
+                <input onChange={e => nameHandler(e)} type='text' name='name' value={name} onBlur={e => blurHandler(e)} className='signup__input signup__input_name' required />
+                {(nameDirty && nameError) && <span className='signup__input-error' style={{display: 'block'}}>{nameError}</span>}
+
+                <label className='signup__label'>E-mail</label>
+                <input onChange={e => emailHandler(e)} type='email' name='email' value={email} onBlur={e => blurHandler(e)} className='signup__input signup__input_email' required />
+                {(emailDirty && emailError) && <span className='signup__input-error' style={{display: 'block'}}>{emailError}</span>}
+
+                <label className='signup__label'>Пароль</label>
+                <input onChange={e => passwordHandler(e)} type='password' name='password' value={password} onBlur={e => blurHandler(e)} className='signup__input signup__input_password' required></input>
+                {(passwordDirty && emailDirty) && <span className='signup__input-error' style={{display: 'block'}}>{passwordError}</span>}
+                
+
+                <button disabled={!formValid} type='submit' className='signup__button'>Зарегистрироваться</button>
+
+            </form>
+
+            <p className='signup__already'>Уже зарегистрированы? <Link to='/signin' className='signup__signin'>Войти</Link></p>
+        </section>
+    )
+} 

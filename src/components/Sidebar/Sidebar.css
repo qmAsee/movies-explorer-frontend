@@ -1,0 +1,129 @@
+.sidebar {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    justify-content: right;
+}
+
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -50;
+    opacity: 0.3;
+    background: #000;
+}
+
+.sidebar_opened {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility .2s, opacity .2s;
+}
+
+.sidebar__content {
+    width: 67.7%;
+    background: #202020;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar__links {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin-top: 105px;
+    list-style: none;
+    padding: 0;
+    width: fit-content;
+    align-self: center;
+    align-items: center;
+}
+
+.sidebar__films {
+    color: #FFF;
+    height: 27px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    text-align: center;
+    width: max-content;
+}
+
+.sidebar__films_active {
+    border-bottom: 2px solid white;
+}
+
+.sidebar__close-icon {
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    background-image: url('../../images/close-icon.png');
+    background-size: cover;
+    align-self: flex-end;
+    margin: 22px 22px 0 0;
+}
+
+.sidebar__link {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+    text-align: center;
+    height: 27px;
+}
+
+.sidebar__me {
+    margin-top: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    text-decoration: none;
+    padding-right: 3px;
+}
+
+.sidebar__account {
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    padding-bottom: 2px;
+}
+
+.sidebar__acclink {
+    display: flex;
+    width: 26px;
+    height: 26px;
+    background-color: #313131;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar__guard {
+    background-image: url('../../images/account-icon.svg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10.383px;
+    height: 10.669px;   
+}
+
+@media screen and (max-width: 360px) {
+    .sidebar__content {
+        width: 100%;
+
+    }
+}
