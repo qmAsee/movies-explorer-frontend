@@ -39,8 +39,10 @@ function App() {
         element={
           <>
             <Header isLoggedIn={true} />
-            <SearchArea />
-            <Movies />
+            <main className='main'>
+              <SearchArea />
+              <Movies />
+            </main>
             <Footer />
           </>
         }
@@ -51,18 +53,22 @@ function App() {
         element={
           <>
             <Header isLoggedIn={true} />
-            <SearchArea />
-            <Movies />
+            <main className='main'>
+              <SearchArea />
+              <Movies />
+            </main>
             <Footer />
           </>
         }
       />
       <Route
-        path="/account"
+        path="/profile"
         element={
           <>
             <Header isLoggedIn={true} />
-            <Account />
+            <main className='main'>
+              <Account />
+            </main>
           </>
         }
       />
@@ -71,7 +77,9 @@ function App() {
         path="/signup"
         element={
           <>
-            <SignUp />
+            <main className='main'>
+              <SignUp />
+            </main>
           </>
         }
       />
@@ -80,7 +88,9 @@ function App() {
         path="/signin"
         element={
           <>
-            <SignIn />
+            <main className='main'>
+              <SignIn />
+            </main>
           </>
         }
       />
@@ -89,7 +99,9 @@ function App() {
         path="*"
         element={
           <>
-            <NotFoundPage />
+            <main className='main'>
+              <NotFoundPage />
+            </main>
           </>
         }
       />

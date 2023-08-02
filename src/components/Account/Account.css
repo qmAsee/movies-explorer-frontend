@@ -44,6 +44,15 @@
     font-size: 11px;
     font-weight: 400;
     line-height: normal;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    text-align: right;
+}
+
+.account__username::placeholder {
+    color: white;
 }
 
 .account__email {
@@ -58,6 +67,15 @@
     font-size: 11px;
     font-weight: 400;
     line-height: normal;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    text-align: right;
+}
+
+.account__useremail::placeholder {
+    color: white;
 }
 
 .account__line {
@@ -66,12 +84,15 @@
 }
 
 .account__edit {
+    width: fit-content;
+    background: none;
+    border: none;
     color: #FFF;
     text-align: center;
     font-size: 13px;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 16px;
+    margin: 0 auto 16px auto;
     cursor: pointer;
     transition: opacity .1s linear;
 }
@@ -89,11 +110,24 @@
     line-height: normal;
     cursor: pointer;
     transition: opacity .1s linear;
+    text-decoration: none;
 }
 
 .account__exit:hover {
     opacity: .9;
     transition: opacity .1s linear;
+}
+
+.account__form {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.account_exit-button {
+    outline: none;
+    border: none;
+    background: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -130,6 +164,7 @@
 
     .account__edit {
         font-size: 12px;
+        margin: 0 auto 14px auto;
     }
     
     .account__exit {

@@ -24,6 +24,13 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    transition: opacity .05s linear;
+    cursor: pointer;
+}
+
+.filtercheckbox__shortmovs:hover {
+    opacity: .85;
+    transition: opacity .075s linear;
 }
 
 .filtercheckbox__shortmovs:before {
@@ -70,6 +77,10 @@
         font-size: 11px;
         font-weight: 400;
         line-height: 18px;
+    }
+
+    .filtercheckbox {
+        padding-top: 3px;
     }
         
 }

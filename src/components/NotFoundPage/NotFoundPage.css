@@ -32,6 +32,12 @@
     font-weight: 400;
     line-height: normal;
     padding: 0;
+    cursor: pointer;
+}
+
+.notfound__backbutton:hover {
+    opacity: .9;
+    transition: opacity .1s linear;
 }
 
 @media screen and (max-width: 768px) {

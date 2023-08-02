@@ -2,11 +2,6 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-// const useInput = (initialValue) => {
-//     const [value, setValue] = React.useState(initialValue);
-
-//     const onChange
-// }
 
 export default function SignUp() {
 
@@ -34,7 +29,9 @@ export default function SignUp() {
 
         if (e.target.value.length < 2) {
             setNameError('Имя не может быть короче 2 символов')
-        } else if (!e.target.value) {
+        } else if (e.target.value.length > 30) {
+            setNameError('Имя не может быть длиннее 30 символов')
+        }   else if (!e.target.value) {
             setNameError('Поле не может быть пустым')
         } else {
             setNameError('')
@@ -88,17 +85,23 @@ export default function SignUp() {
             </div>
             <form className='signup__form'>
 
-                <label className='signup__label'>Имя</label>
-                <input onChange={e => nameHandler(e)} type='text' name='name' value={name} onBlur={e => blurHandler(e)} className='signup__input signup__input_name' required />
-                {(nameDirty && nameError) && <span className='signup__input-error' style={{display: 'block'}}>{nameError}</span>}
+                <div className='signup__form_box'>
+                    <label className='signup__label'>Имя</label>
+                    <input onChange={e => nameHandler(e)} type='text' name='name' value={name} onBlur={e => blurHandler(e)} className='signup__input signup__input_name' placeholder='Ваше имя' required />
+                    {(nameDirty && nameError) && <span className='signup__input-error' style={{visibility: 'visible'}}>{nameError}</span>}
+                </div>
 
-                <label className='signup__label'>E-mail</label>
-                <input onChange={e => emailHandler(e)} type='email' name='email' value={email} onBlur={e => blurHandler(e)} className='signup__input signup__input_email' required />
-                {(emailDirty && emailError) && <span className='signup__input-error' style={{display: 'block'}}>{emailError}</span>}
+                <div className='signup__form_box'>
+                    <label className='signup__label'>E-mail</label>
+                    <input onChange={e => emailHandler(e)} type='email' name='email' value={email} onBlur={e => blurHandler(e)} className='signup__input signup__input_email' placeholder='E-mail' required />
+                    {(emailDirty && emailError) && <span className='signup__input-error' style={{visibility: 'visible'}}>{emailError}</span>}
+                </div>
 
-                <label className='signup__label'>Пароль</label>
-                <input onChange={e => passwordHandler(e)} type='password' name='password' value={password} onBlur={e => blurHandler(e)} className='signup__input signup__input_password' required></input>
-                {(passwordDirty && emailDirty) && <span className='signup__input-error' style={{display: 'block'}}>{passwordError}</span>}
+                <div className='signup__form_box'>
+                    <label className='signup__label'>Пароль</label>
+                    <input onChange={e => passwordHandler(e)} type='password' name='password' value={password} onBlur={e => blurHandler(e)} className='signup__input signup__input_password' placeholder='Пароль' required></input>
+                    {(passwordDirty && emailDirty) && <span className='signup__input-error' style={{visibility: 'visible'}}>{passwordError}</span>}
+                </div>
                 
 
                 <button disabled={!formValid} type='submit' className='signup__button'>Зарегистрироваться</button>

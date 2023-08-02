@@ -14,8 +14,8 @@
     display: flex;
     margin: 100px auto 0 auto;
     width: calc(100% - 70px * 2);
-    height: 50px;
     border-bottom: white 1px solid;
+    padding-bottom: 23px;
 }
 
 .techs__subtitle {
@@ -30,7 +30,6 @@
 
 .techs__text {
     display: flex;
-    width: 460px;
     margin: 0 auto;
     color: #FFF;
     text-align: center;
@@ -38,6 +37,7 @@
     font-weight: 400;
     line-height: 20px;
     letter-spacing: -0.56px;
+    width: 460px;
 }
 
 .techs__techs {
@@ -67,7 +67,6 @@
 @media screen and (max-width: 768px) {
     .techs__title {   
         width: calc(100% - 50px * 2);
-        height: 50px;
         margin: 90px auto 0 auto;
     }
 
@@ -113,14 +112,14 @@
 
 @media screen and (max-width: 400px) {
     .techs__title {
-        height: 48px;
         font-size: 18px;
         font-weight: 400;
         line-height: normal;
         letter-spacing: -0.72px;  
         width: calc(100% - 18px * 2);
-        margin: 70px auto 0 auto;
-
+        margin: 51px auto 0 auto;
+        padding-bottom: 27px;
+        box-sizing: border-box;
     }
 
     .techs__subtitle {

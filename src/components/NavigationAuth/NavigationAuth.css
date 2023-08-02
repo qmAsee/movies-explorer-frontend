@@ -74,6 +74,11 @@
     display: none;
 }
 
+.navbar__burger:hover {
+   opacity: .9;
+   transition: opacity .1s linear; 
+}
+
 @media screen and (max-width: 768px) {  
     .navbar__films {
         display: none;
@@ -111,7 +116,13 @@
         padding: 0;
         box-sizing: border-box;
         cursor: pointer;
+        transition: opacity .1s linear; 
     }
+
+    .navbar__burger:hover {
+        opacity: .65;
+        transition: opacity .1s linear; 
+     }
     
 }
 

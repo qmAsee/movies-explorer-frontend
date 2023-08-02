@@ -12,10 +12,10 @@ export default function SignIn() {
             <form className='signin__form'>
 
                 <label className='signin__label'>E-mail</label>
-                <input type='email' className='signin__input signin__input_email' required />
+                <input type='email' className='signin__input signin__input_email' placeholder='E-mail' required />
 
                 <label className='signin__label'>Пароль</label>
-                <input type='password' className='signin__input signin__input_password' required></input>
+                <input type='password' className='signin__input signin__input_password' placeholder='Пароль' required></input>
 
                 <button type='submit' className='signin__button'>Войти</button>
 

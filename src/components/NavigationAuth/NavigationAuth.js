@@ -17,10 +17,10 @@ export default function NavigationAuth() {
     return (
         <>
             <Sidebar isOpened={isPopupOpened} onClose={onClose} />
-            <div className='navbar__menu'>
+            <nav className='navbar__menu'>
                 <NavLink to='/movies' className={({ isActive }) => isActive ? 'navbar__films navbar__films_active' : 'navbar__films'}>Фильмы</NavLink>
                 <NavLink to='/saved-movies' className={({ isActive }) => isActive ? 'navbar__films navbar__films_active' : 'navbar__films'}>Сохранённые фильмы</NavLink>
-            </div>
+            </nav>
             <NavLink to='/account' className='navbar__me'>
                 <span className='navbar__account'>Аккаунт</span>
                 <div className='navbar__acclink'>

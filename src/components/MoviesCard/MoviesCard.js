@@ -14,10 +14,10 @@ export default function MoviesCard() {
     return (
         <>
             <li className='movie'>
-                <img className='movie__picture' src={MoviePicture} alt="Постер"></img>
+                <img className='movie__picture' src={MoviePicture} alt='постер'></img>
                 <div className='movie__info'>
                     <div className='movie__description'>
-                        <span className='movie__name'>33 слова о дизайне</span>
+                        <h2 className='movie__name'>33 слова о дизайне</h2>
                         <span className='movie__duration'>1ч42м</span>
                     </div>
                     <button onClick={toggleSaveMovie} className={location.pathname === '/saved-movies' ? 'movie__save_delete' : !saveMovie ? 'movie__save' : 'movie__save movie__save_saved'}></button>

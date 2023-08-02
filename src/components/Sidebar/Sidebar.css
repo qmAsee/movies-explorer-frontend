@@ -57,6 +57,7 @@
     text-decoration: none;
     text-align: center;
     width: max-content;
+    transition: opacity .1s linear;
 }
 
 .sidebar__films_active {
@@ -68,10 +69,17 @@
     height: 32px;
     background: none;
     border: none;
-    background-image: url('../../images/close-icon.png');
+    background-image: url('../../images/close-icon.svg');
     background-size: cover;
     align-self: flex-end;
     margin: 22px 22px 0 0;
+    cursor: pointer;
+    transition: opacity .1s linear;
+}
+
+.sidebar__close-icon:hover {
+    opacity: .65;
+    transition: opacity .1s linear;
 }
 
 .sidebar__link {
@@ -82,6 +90,17 @@
     text-decoration: none;
     text-align: center;
     height: 27px;
+    transition: opacity .1s linear;
+}
+
+.sidebar__link:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
+}
+
+.sidebar__films:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
 }
 
 .sidebar__me {
@@ -92,6 +111,12 @@
     gap: 7px;
     text-decoration: none;
     padding-right: 3px;
+    transition: opacity .1s linear;
+}
+
+.sidebar__me:hover {
+    opacity: .7;
+    transition: opacity .1s linear;
 }
 
 .sidebar__account {
@@ -124,6 +149,19 @@
 @media screen and (max-width: 360px) {
     .sidebar__content {
         width: 100%;
+    }
 
+    .sidebar__links {
+        margin-top: 90px;
+        gap: 20px;
+    }
+
+    .sidebar__close-icon {
+        margin: 13px 13px 9px 0;
+    }
+
+    .sidebar__me {
+        margin-top: 423px;
+        padding-left: 10px;
     }
 }

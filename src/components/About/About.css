@@ -3,11 +3,10 @@
     flex-direction: column;
     background: #202020;
     width: 100%;
-    height: 608px;
     padding-top: 110px;
     align-items: center;
     box-sizing: border-box;
-    
+    margin-bottom: 110px;
 }
 
 .about__title {
@@ -19,8 +18,8 @@
     letter-spacing: -0.88px;
     display: block;
     width: calc(100% - 70px * 2);
-    height: 50px;
     border-bottom: #DADADA 1px solid;
+    padding-bottom: 24px;
 }
 
 .about__diploma {
@@ -36,7 +35,6 @@
 .about__tracker {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    width: 1140px;
     margin-top: 110px;
     width: calc(100% - 70px * 2);
 }
@@ -98,7 +96,7 @@
 
     .about {
         padding-top: 90px;
-        height: 585px;
+        margin-bottom: 90px;
     }
 
     .about__diploma {
@@ -114,7 +112,6 @@
 
     .about__title {
         width: calc(100% - 50px * 2);
-        height: 50px;
     }
 
     .about__tracker {
@@ -135,7 +132,6 @@
 
 @media screen and (max-width: 465px) {
     .about {
-        height: 641px;
     }
 
     .about__diploma {
@@ -158,12 +154,12 @@
     }
     
     .about__title {
-        height: 48px;
         font-size: 18px;
         font-weight: 400;
         line-height: normal;
         letter-spacing: -0.72px;  
         width: calc(100% - 18px * 2);
+        padding-bottom: 27px;
     }
 
     .about__diploma {

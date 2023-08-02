@@ -2,27 +2,27 @@
     display: flex;
     flex-direction: column;
     width: calc(100% - 40px * 2);
-    margin: 0 auto;
+    margin: 0 auto 159px auto;
 }
 
 .movies__list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    row-gap: 31px;
+    row-gap: 32px;
     column-gap: 20px;
     padding: 0;
     list-style: none;
-    margin: 70px auto 82px auto;
+    margin: 70px auto 80px auto;
 }
 
 .movies__more {
     display: flex;
-    width: 100%;
+    width: calc(100% - 30px * 2);
     height: 36px;
     background: #2F2F2F;
     border-radius: 6px;
     border: none;
-    margin: 0 auto 80px auto;
+    margin: 0 auto 0 auto;
     color: #FFF;
     font-size: 12px;
     font-weight: 500;

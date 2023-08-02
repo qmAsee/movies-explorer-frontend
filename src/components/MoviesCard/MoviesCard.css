@@ -23,6 +23,7 @@
     font-size: 13px;
     font-weight: 500;
     line-height: normal;
+    margin: 0;
 }
 
 .movie__duration {
@@ -39,6 +40,12 @@
     border: 2px solid #FFFFFF;
     background-color: #313131;
     cursor: pointer;
+    transition: opacity .08s linear;
+}
+
+.movie__save:hover {
+    opacity: .75;
+    transition: opacity .08s linear;
 }
 
 .movie__save_saved {
@@ -52,6 +59,12 @@
     background-image: url('../../images/movie-delete.svg');
     cursor: pointer;
     border: none;
+    transition: opacity .08s linear;
+}
+
+.movie__save_delete:hover {
+    opacity: .75;
+    transition: opacity .08s linear;
 }
 
 @media screen and (max-width: 940px) {

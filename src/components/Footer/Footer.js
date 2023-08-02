@@ -6,10 +6,15 @@ export default function Footer() {
             <span className='footer__title'>Учебный проект Яндекс.Практикум x BeatFilm.</span>
             <div className='footer__copyright'>
                 <span className='footer__year'>&#169; 2023 Максим Купчин</span>
-                <div className='footer__links'>
-                    <a href='https://practicum.yandex.ru/' target='_blank' className='footer__link'>Яндекс.Практикум</a>
-                    <a href='https://github.com/qmAsee' target='_blank' className='footer__link'>Github</a>
-                </div>
+                <ul className='footer__links'>
+                    <li className='footer__sources'>
+                        <a href='https://practicum.yandex.ru/' target='_blank' className='footer__link'>Яндекс.Практикум</a>
+                    </li>
+                    
+                    <li className='footer__sources'>
+                        <a href='https://github.com/qmAsee' target='_blank' className='footer__link'>Github</a>
+                    </li>
+                </ul>
             </div>
         </footer>
     )

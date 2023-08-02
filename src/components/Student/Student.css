@@ -2,7 +2,25 @@
     background: #202020;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 auto 184px auto;
+}
+
+.student__works {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.student__project {
+    height: fit-content;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    height: 69px;
+    border-bottom: 1px solid #424242;
+    width: calc(100% - 70px * 2);
+    margin: 0 auto 20px auto;
 }
 
 .student__title {
@@ -14,9 +32,8 @@
     display: flex;
     margin: 110px auto 0 auto;
     width: calc(100% - 70px * 2);
-    
-    height: 50px;
     border-bottom: white 1px solid;
+    padding-bottom: 23px;
 }
 
 .student__about {
@@ -58,7 +75,7 @@
 }
 
 .student__photo {
-    background-image: url('../../images/me.png');
+    background-image: url('../../images/me2.png');
     min-width: 270px;
     height: 327px;
     border-radius: 10px;
@@ -73,7 +90,7 @@
     font-size: 14px;
     font-weight: 500;
     line-height: normal;
-    margin: 76px 0 0 0;
+    margin: 98px 0 0 0;
     width: fit-content;
     transition: opacity .08s linear;
 }
@@ -95,13 +112,11 @@
 .student__link {
     text-decoration: none;
     color: white;
-    height: 69px;
-    border-bottom:  #424242 1px solid;
     width: calc(100% - 70px * 2);
-    margin: 0 auto 20px auto;
+    border-bottom: 1px #424242 solid;
 }
 
-.student__link:last-of-type {
+.student__project:last-of-type {
     border-bottom: none;
     margin: 0 auto;
 }
@@ -142,11 +157,14 @@
 
 @media screen and (max-width: 768px) {
 
+    .student {
+        margin: 0 auto 149px auto;
+    }
 
     .student__title {
         width: calc(100% - 50px * 2);
-        height: 50px;
-        margin: 90px auto 0 auto;
+        margin: 92px auto 0 auto;
+        padding-bottom: 23px;
     }
 
     .student__about {
@@ -174,7 +192,7 @@
     }
 
     .student__github {
-        margin: 70px 0 0 0;
+        margin: 87px 0 0 0;
     }
 
     .student__photo {
@@ -191,7 +209,7 @@
         width: calc(100% - 50px * 2);
     }
 
-    .student__link {
+    .student__project {
         border-bottom:  #E6E6E6 1px solid;
         width: calc(100% - 50px * 2);
     }
@@ -244,15 +262,20 @@
     
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 400px) {
+
+    .student {
+        margin: 0 auto 132px auto;
+    }
+
     .student__title {
-        height: 48px;
         font-size: 18px;
         font-weight: 400;
         line-height: normal;
         letter-spacing: -0.72px;  
         width: calc(100% - 14px * 2);
         margin: 51px auto 0 auto;
+        padding-bottom: 29px;
     }
 
     .student__about {
@@ -266,7 +289,7 @@
     }
 
     .student__subtitle {
-        margin: 20px 0 0 0;
+        margin: 19px 0 0 0;
     }
 
     .student__info {
@@ -280,7 +303,7 @@
         line-height: 20px;
     }
 
-    .student__link {
+    .student__project {
         width: calc(100% - 14px * 2);
         height: 46px;
     }

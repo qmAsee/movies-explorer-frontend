@@ -9,13 +9,16 @@ import Footer from '../Footer/Footer';
 
 export default function Landing() {
     return (
-        <main className='main'>
-            <PromoPage />
-            <LandingNav />
-            <About />
-            <Techs />
-            <Student />
-            <Footer />
-        </main>
+        <>
+            <main className='main'>
+                <PromoPage />
+                <LandingNav />
+                <About />
+                <Techs />
+                <Student />
+            </main>
+                <Footer />
+            </>
+
     )
 }

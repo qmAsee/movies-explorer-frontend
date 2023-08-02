@@ -10,12 +10,12 @@ export default function About() {
                 <p className='about__text' id="about-diploma">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
                 <p className='about__text' id="about-diploma">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
             </div>
-            <div className='about__tracker'>
+            <article className='about__tracker'>
                 <div className='about__line_green'>1 неделя</div>
                 <div className='about__line_grey'>4 недели</div>
                 <p className='about__techs'>Back-end</p>
                 <p className='about__techs'>Front-end</p>
-            </div>
+            </article>
         </section>
     )
 }
