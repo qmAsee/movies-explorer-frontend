@@ -19,10 +19,10 @@
 .account__info {
     display: flex;
     flex-direction: column;
-    margin: 0 auto 220px auto;
+    margin: 0 auto 218px auto;
     list-style: none;
     padding: 0;
-    height: 62px;
+    gap: 15px;
     justify-content: space-between;
 }
 
@@ -92,7 +92,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: normal;
-    margin: 0 auto 16px auto;
+    margin: 0 auto 12px auto;
     cursor: pointer;
     transition: opacity .1s linear;
 }
@@ -124,7 +124,7 @@
     margin: 0 auto;
 }
 
-.account_exit-button {
+.account__exit-button {
     outline: none;
     border: none;
     background: none;

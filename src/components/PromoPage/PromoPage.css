@@ -30,7 +30,6 @@
 
 @media screen and (max-width: 768px) {
     .promopage {
-        height: 802px;
     }
 
     .promopage__background {
@@ -39,6 +38,7 @@
 
     .promopage__title {
         padding-top: 41px;
+        margin: 303px 0 343px 0;
     }
 }
 
@@ -59,6 +59,7 @@
         font-size: 31px;
         line-height: 39px;
         letter-spacing: -1.24px;
-        padding-bottom: 25px;
+        padding-bottom: 64px;
+        margin: 0;
     }
 }

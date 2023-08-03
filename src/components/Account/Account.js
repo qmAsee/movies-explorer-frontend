@@ -20,7 +20,7 @@ export default function Account() {
                 </ul>
             </form>
             <button type='button' className='account__edit'>Редактировать</button>
-            <button type='button' className='account_exit-button'><Link to='/' className='account__exit'>Выйти из аккаунта</Link></button>
+            <button type='button' className='account__exit-button'><Link to='/' className='account__exit'>Выйти из аккаунта</Link></button>
         </section>
     )
 }

@@ -27,6 +27,17 @@ export default function Movies() {
                     <MoviesCard />
                     <MoviesCard />
                     <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
+                    <MoviesCard />
           
                  
                 </ul>

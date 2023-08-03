@@ -17,17 +17,17 @@ export default function NavigationAuth() {
     return (
         <>
             <Sidebar isOpened={isPopupOpened} onClose={onClose} />
-            <nav className='navbar__menu'>
+            <nav className='navbar navbar_auth'>
                 <NavLink to='/movies' className={({ isActive }) => isActive ? 'navbar__films navbar__films_active' : 'navbar__films'}>Фильмы</NavLink>
                 <NavLink to='/saved-movies' className={({ isActive }) => isActive ? 'navbar__films navbar__films_active' : 'navbar__films'}>Сохранённые фильмы</NavLink>
             </nav>
-            <NavLink to='/account' className='navbar__me'>
-                <span className='navbar__account'>Аккаунт</span>
-                <div className='navbar__acclink'>
-                    <div className='navbar__guard'></div>
+            <NavLink to='/profile' className='me'>
+                <span className='me__account'>Аккаунт</span>
+                <div className='me__acclink'>
+                    <div className='me__guard'></div>
                 </div>
             </NavLink>
-            <button onClick={onOpen} type='button' className='navbar__burger'></button>
+            <button onClick={onOpen} type='button' className='burger'></button>
         </>
     )
 }
