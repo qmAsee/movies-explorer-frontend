@@ -6,6 +6,14 @@
     align-items: center;
 }
 
+.signin__logo {
+    background-image: url('../../images/header_logo.svg');
+    width: 38px;
+    height: 38px;
+    display: flex;
+    transition: opacity .08s linear;
+}
+
 .signin__header {
     display: flex;
     flex-direction: column;
@@ -147,7 +155,7 @@
         text-align: center;
     }
 
-    .sign__logo {
+    .signin__logo {
         margin-bottom: 10px;
     }
 

@@ -53,13 +53,9 @@
 }
 
 .movie__save_delete {
-    width: 16px;
-    height: 16px;
     background: none;
     background-image: url('../../images/movie-delete.svg');
-    cursor: pointer;
     border: none;
-    transition: opacity .08s linear;
 }
 
 .movie__save_delete:hover {

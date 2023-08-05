@@ -10,9 +10,7 @@ export default function NavigationUnauth() {
                 </li>
                 <li className='navbar__item'>
                     <Link to='/signin' className='navbar__link navbar__link_log'>
-                        <button type='button' className='navbar__log-button'>
-                            Войти
-                        </button>
+                        Войти
                     </Link>
                 </li>
             </ul>

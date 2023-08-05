@@ -3,6 +3,9 @@
     display: flex;
     width: 100%;
     justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 23px;
+    box-sizing: border-box;
 }
 
 .landingnav__list {
@@ -10,8 +13,7 @@
     list-style: none;
     gap: 40px;
     padding: 0;
-    margin-top: 24px;
-    margin-bottom: 25px;
+    margin: 0;
 }
 
 .landingnav__link {
@@ -29,6 +31,12 @@
 .landingnav__link:hover {
     opacity: .70;
     transition: opacity .1s linear;
+}
+
+@media screen and (max-width: 768px) {
+    .landingnav {
+        padding-bottom: 24px;
+    }
 }
 
 @media screen and (max-width: 325px) {

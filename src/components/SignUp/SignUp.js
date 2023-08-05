@@ -80,24 +80,24 @@ export default function SignUp() {
     return (
         <section className='signup'>
             <div className='signup__header'>
-                <Link to='/' className="header__logo"></Link> 
+                <Link to='/' className="signup__logo"></Link> 
                 <h1 className='signup__title'>Добро пожаловать!</h1>
             </div>
             <form className='signup__form'>
 
-                <div className='signup__form_box'>
+                <div className='signup__box'>
                     <label className='signup__label'>Имя</label>
                     <input onChange={e => nameHandler(e)} type='text' name='name' value={name} onBlur={e => blurHandler(e)} className='signup__input signup__input_name' placeholder='Ваше имя' required />
                     {(nameDirty && nameError) && <span className='signup__input-error' style={{visibility: 'visible'}}>{nameError}</span>}
                 </div>
 
-                <div className='signup__form_box'>
+                <div className='signup__box'>
                     <label className='signup__label'>E-mail</label>
                     <input onChange={e => emailHandler(e)} type='email' name='email' value={email} onBlur={e => blurHandler(e)} className='signup__input signup__input_email' placeholder='E-mail' required />
                     {(emailDirty && emailError) && <span className='signup__input-error' style={{visibility: 'visible'}}>{emailError}</span>}
                 </div>
 
-                <div className='signup__form_box'>
+                <div className='signup__box'>
                     <label className='signup__label'>Пароль</label>
                     <input onChange={e => passwordHandler(e)} type='password' name='password' value={password} onBlur={e => blurHandler(e)} className='signup__input signup__input_password' placeholder='Пароль' required></input>
                     {(passwordDirty && emailDirty) && <span className='signup__input-error' style={{visibility: 'visible'}}>{passwordError}</span>}

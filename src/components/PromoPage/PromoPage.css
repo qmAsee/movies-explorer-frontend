@@ -38,13 +38,13 @@
 
     .promopage__title {
         padding-top: 41px;
-        margin: 303px 0 343px 0;
+        margin: 303px 0 342px 0;
     }
 }
 
 @media screen and (max-width: 500px) {
     .promopage {
-        height: 590px;
+        height: 588px;
         padding-bottom: 0px;
     }
 

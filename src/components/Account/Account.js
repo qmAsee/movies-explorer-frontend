@@ -12,15 +12,14 @@ export default function Account() {
                         <span className='account__name'>Имя</span>
                         <input type='text' name='name' className='account__username' placeholder='Имя' disabled required />
                     </li>
-                    <div className='account__line'></div>
                     <li className='account__box'>
                         <span className='account__email'>E-mail</span>
                         <input type='email' name='email' className='account__useremail' placeholder='Почта' disabled required></input>
                     </li>
                 </ul>
+                <button type='button' className='account__edit'>Редактировать</button>
             </form>
-            <button type='button' className='account__edit'>Редактировать</button>
-            <button type='button' className='account__exit-button'><Link to='/' className='account__exit'>Выйти из аккаунта</Link></button>
+            <Link to='/' className='account__exit'>Выйти из аккаунта</Link>
         </section>
     )
 }

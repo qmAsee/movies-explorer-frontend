@@ -13,7 +13,6 @@
 }
 
 .student__project {
-    margin: 0;
     padding: 0;
     height: 69px;
     border-bottom: 1px solid #424242;
@@ -28,7 +27,7 @@
     line-height: normal;
     letter-spacing: -0.88px;
     display: flex;
-    margin: 110px auto 0 auto;
+    margin: 112px auto 0 auto;
     width: calc(100% - 70px * 2);
     border-bottom: white 1px solid;
     padding-bottom: 23px;
@@ -210,6 +209,8 @@
     .student__project {
         border-bottom:  #E6E6E6 1px solid;
         width: calc(100% - 50px * 2);
+        margin: 0 auto 20px auto;
+
     }
 
     .student__site {
@@ -263,7 +264,7 @@
 @media screen and (max-width: 400px) {
 
     .student {
-        margin: 0 auto 132px auto;
+        margin: 0 auto 130px auto;
     }
 
     .student__title {
@@ -304,6 +305,7 @@
     .student__project {
         width: calc(100% - 14px * 2);
         height: 46px;
+        margin: 0 auto 21px auto;
     }
 
     .student__arrow {

@@ -73,16 +73,23 @@
     display: flex;
     margin: 0;
     color: #FFF;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: -0.8px;
+    
 }
 
 .about__text {
     display: flex;
     margin: 0;
     color: #FFF;
+}
+
+.about__text_title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.8px;
+}
+
+.about__text_subtitle {
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -101,7 +108,7 @@
         max-width: calc(100% - 50px * 2);
     }
 
-    .about__text {
+    .about__text_subtitle {
         font-size: 12px;
         line-height: 18px;
     }
@@ -127,15 +134,13 @@
 }
 
 @media screen and (max-width: 465px) {
-    .about {
-    }
 
     .about__diploma {
         grid-template-rows: repeat(4, minmax(min-content, max-content));
         grid-template-columns: repeat(1, 1fr);
     }
 
-    #about-diploma:nth-of-type(2) {
+    .about__text:nth-of-type(2) {
         order: 2;
     }
 
@@ -146,7 +151,7 @@
 
 @media screen and (max-width: 400px) {
     .about{
-        padding-top: 70px;
+        padding-top: 74px;
     }
     
     .about__title {
@@ -166,17 +171,17 @@
         gap: 0;
     }
 
-    #about-diploma:nth-child(3) {
+    .about__text:nth-child(3) {
         margin-bottom: 56px;
     }
 
-    .about__subtitle {
+    .about__text_title {
         font-size: 18px;
         letter-spacing: -0.72px;
         margin-bottom: 18px;
     }
 
-    .about__text {
+    .about__text_subtitle {
         font-size: 11px;
         line-height: 16px;
     }

@@ -6,6 +6,14 @@
     align-items: center;
 }
 
+.signup__logo {
+    background-image: url('../../images/header_logo.svg');
+    width: 38px;
+    height: 38px;
+    display: flex;
+    transition: opacity .08s linear;
+}
+
 .signup__form {
     display: flex;
     flex-direction: column;
@@ -56,7 +64,7 @@
     outline: none;
 }
 
-.signup__form_box {
+.signup__box {
     display: flex;
     flex-direction: column;
     margin-bottom: 14px;
@@ -165,10 +173,6 @@
     .signup__title {
         text-align: center;
         margin: 49px 0 40px 0;
-    }
-
-    .signup__logo {
-        margin-bottom: 10px;
     }
 
     .signup__already {

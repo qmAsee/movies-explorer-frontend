@@ -20,7 +20,7 @@ export default function MoviesCard() {
                         <h2 className='movie__name'>33 слова о дизайне</h2>
                         <span className='movie__duration'>1ч42м</span>
                     </div>
-                    <button onClick={toggleSaveMovie} className={location.pathname === '/saved-movies' ? 'movie__save_delete' : !saveMovie ? 'movie__save' : 'movie__save movie__save_saved'}></button>
+                    <button onClick={toggleSaveMovie} className={location.pathname === '/saved-movies' ? 'movie__save movie__save_delete' : !saveMovie ? 'movie__save' : 'movie__save movie__save_saved'}></button>
                 </div>
             </li>
         </>

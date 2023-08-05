@@ -32,6 +32,12 @@
     justify-content: space-between;
 }
 
+.account__box:nth-of-type(1) {
+   border-bottom: 1px solid #424242;
+   padding-bottom: 14px;
+   margin-bottom: 2px;
+}
+
 .account__name {
     color: #FFF;
     font-size: 11px;
@@ -53,6 +59,11 @@
 
 .account__username::placeholder {
     color: white;
+}
+
+.account__username:focus {
+    background-color: rgba(90, 90, 90, .5);
+    outline: none;
 }
 
 .account__email {
@@ -78,6 +89,11 @@
     color: white;
 }
 
+.account__useremail:focus {
+    background-color: rgba(90, 90, 90, .5);
+    outline: none;
+}
+
 .account__line {
     height: 1px;
     background: #424242;
@@ -92,7 +108,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: normal;
-    margin: 0 auto 12px auto;
+    margin: 0 auto 15px auto;
     cursor: pointer;
     transition: opacity .1s linear;
 }
@@ -120,6 +136,7 @@
 
 .account__form {
     display: flex;
+    flex-direction: column;
     width: fit-content;
     margin: 0 auto;
 }
@@ -140,7 +157,7 @@
     }
 
     .account__info  {  
-        margin: 0 auto 210px auto;
+        margin: 0 auto 208px auto;
     }
 }
 
@@ -159,12 +176,12 @@
     }
 
     .account__info  {  
-        margin: 0 auto 379px auto;
+        margin: 0 auto 376px auto;
     }
 
     .account__edit {
         font-size: 12px;
-        margin: 0 auto 14px auto;
+        margin: 0 auto 15px auto;
     }
     
     .account__exit {

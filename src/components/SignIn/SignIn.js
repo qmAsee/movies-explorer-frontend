@@ -6,7 +6,7 @@ export default function SignIn() {
     return (
         <section className='signin'>
             <div className='signin__header'>
-                <Link to='/' className="header__logo sign__logo"></Link> 
+                <Link to='/' className="signin__logo"></Link> 
                 <h1 className='signin__title'>Рады видеть!</h1>
             </div>
             <form className='signin__form'>
