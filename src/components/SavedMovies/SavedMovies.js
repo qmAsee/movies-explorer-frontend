@@ -9,23 +9,23 @@ import { filterMoviesQuery, filterMovieDuration } from '../../utils/utils';
 
 export default function SavedMovies({ isLoggedIn, savedCards,  onDeleteCard}) {
 
-    const [filteredMovies, setFilteredMovies] = React.useState(savedCards);
+    const [filteredCards, setFilteredCards] = React.useState(savedCards);
     const [isMovieShort, setIsMovieShort] = React.useState(false);
     const [isNotFound, setIsNotFound] = React.useState(false);
     const [searchQuery, setSearchQuery] = React.useState('')
 
     React.useEffect(() => {
         const moviesList = filterMoviesQuery(savedCards, searchQuery);
-        setFilteredMovies(isMovieShort ? filterMovieDuration(moviesList) : moviesList);
+        setFilteredCards(isMovieShort ? filterMovieDuration(moviesList) : moviesList);
     }, [savedCards, searchQuery, isMovieShort])
 
     React.useEffect(() => {
-        if (filteredMovies.length === 0) {
+        if (filteredCards.length === 0) {
             setIsNotFound(true)
         } else {
             setIsNotFound(false)
         }
-    }, [filteredMovies]);
+    }, [filteredCards]);
 
     function handleShortMovies() {
         setIsMovieShort(!isMovieShort)
@@ -40,7 +40,7 @@ export default function SavedMovies({ isLoggedIn, savedCards,  onDeleteCard}) {
             <Header isLoggedIn={isLoggedIn} />
             <SearchArea onSearch={onSearch} onFilter={handleShortMovies}/>
             <MoviesList
-                cards={filteredMovies}
+                cards={filteredCards}
                 isSavedCard={true}
                 isNotFound={isNotFound}
                 onDeleteCard={onDeleteCard}
