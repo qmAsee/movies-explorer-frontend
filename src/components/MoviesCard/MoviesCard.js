@@ -1,27 +1,60 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
-import MoviePicture from '../../images/MoviePicture.png'
+import { convertDuration } from '../../utils/utils';
+import { BASE_URL } from '../../utils/constanst';
 
-export default function MoviesCard() {
-    const [saveMovie, setSaveMovie] = React.useState(false)
-    const location = useLocation();
+export default function MoviesCard({ card, onSaveCard, onDeleteCard, savedCards, saved, isSavedCard }) {
+    const [saveMovie, setSaveMovie] = useState(false)
 
-    const toggleSaveMovie = () => {
-        setSaveMovie(!saveMovie)
+    function onCardSave() {
+
+        if (saved) {
+            onDeleteCard(savedCards.filter((movieCard) => movieCard.movieId === card.id)[0]);
+            setSaveMovie(false);
+        } else {
+            onSaveCard(card)
+            setSaveMovie(true)
+
+        }
+    }
+
+    function onCardDelete() {
+        onDeleteCard(card)
     }
 
     return (
         <>
             <li className='movie'>
-                <img className='movie__picture' src={MoviePicture} alt='постер'></img>
+
+                <a href={card.trailerLink} className='movie__link' target="_blank" rel='noreferrer'>
+                    <img className='movie__picture' src={isSavedCard ? card.image : `${BASE_URL}${card.image.url}`} alt={card.nameRU}></img>
+                </a>
+
                 <div className='movie__info'>
                     <div className='movie__description'>
-                        <h2 className='movie__name'>33 слова о дизайне</h2>
-                        <span className='movie__duration'>1ч42м</span>
+                        <h2 className='movie__name'>{card.nameRU}</h2>
+                        <span className='movie__duration'>{convertDuration(card.duration)}</span>
                     </div>
-                    <button onClick={toggleSaveMovie} className={location.pathname === '/saved-movies' ? 'movie__save movie__save_delete' : !saveMovie ? 'movie__save' : 'movie__save movie__save_saved'}></button>
+                    {
+                        !isSavedCard &&
+                        <button
+                            type='button'
+                            className={saved ? 'movie__save movie__save_saved' : !saveMovie ? 'movie__save' : 'movie__save'}
+                            onClick={onCardSave}>
+                        </button>
+                    }
+
+                    {
+                        isSavedCard &&
+                        <button
+                            type='button'
+                            className={saveMovie ? 'movie__save movie__save_delete' : !saveMovie ? 'movie__save movie__save_delete' : 'movie__save movie__save_delete'}
+                            onClick={onCardDelete}>
+                        </button>
+                    }
+ 
                 </div>
+ 
             </li>
         </>
     )

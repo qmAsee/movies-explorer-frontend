@@ -3,6 +3,7 @@
     margin: 0 auto;
     gap: 10px;
     display: inline-block;
+    margin-top: 29px;
 }
 
 .filtercheckbox__checkbox {

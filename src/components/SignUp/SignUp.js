@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-export default function SignUp() {
+export default function SignUp({ isLoading, onSignUp, message }) {
 
     const [name, setName] = React.useState('')
     const [nameDirty, setNameDirty] = React.useState(false)
@@ -15,6 +15,16 @@ export default function SignUp() {
     const [emailError, setEmailError] = React.useState('Поле E-mail не может быть пустым')
     const [passwordError, setPasswordError] = React.useState('Пароль не может быть пустым')
     const [formValid, setFormValid] = React.useState(false)
+
+    const [formValue, setFormValue] = React.useState({});
+    
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        const { name, email, password } = formValue;
+
+        onSignUp(name, email, password)
+    }
 
     React.useEffect(() => {
         if (emailError || passwordError || nameError) {
@@ -36,6 +46,14 @@ export default function SignUp() {
         } else {
             setNameError('')
         }
+
+
+        const { name, value } = e.target;
+
+        setFormValue({
+        ...formValue,
+        [name]: value,
+        });
     }
 
     const emailHandler = (e) => {
@@ -48,6 +66,14 @@ export default function SignUp() {
         } else {
             setEmailError('')
         }
+
+        const { name, value } = e.target;
+
+        setFormValue({
+        ...formValue,
+        [name]: value,
+        });
+
     }
 
     const passwordHandler = (e) => {
@@ -61,6 +87,14 @@ export default function SignUp() {
         } else {
             setPasswordError('')
         }
+
+        const { name, value } = e.target;
+
+        setFormValue({
+        ...formValue,
+        [name]: value,
+        });
+ 
     }
 
     const blurHandler = (e) => {
@@ -77,13 +111,15 @@ export default function SignUp() {
         }
     }
 
+
+
     return (
         <section className='signup'>
             <div className='signup__header'>
                 <Link to='/' className="signup__logo"></Link> 
                 <h1 className='signup__title'>Добро пожаловать!</h1>
             </div>
-            <form className='signup__form'>
+            <form onSubmit={handleSubmit} className='signup__form'>
 
                 <div className='signup__box'>
                     <label className='signup__label'>Имя</label>
@@ -103,7 +139,7 @@ export default function SignUp() {
                     {(passwordDirty && emailDirty) && <span className='signup__input-error' style={{visibility: 'visible'}}>{passwordError}</span>}
                 </div>
                 
-
+                <span className='signup__error'>{message}</span>
                 <button disabled={!formValid} type='submit' className='signup__button'>Зарегистрироваться</button>
 
             </form>

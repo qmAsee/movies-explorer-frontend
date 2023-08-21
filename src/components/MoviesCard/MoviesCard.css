@@ -4,12 +4,18 @@
     filter: drop-shadow(0px 16px 24px rgba(0, 0, 0, 0.08));
     width: 270px;
     height: 218px;
+    overflow: hidden;
 }
 
 .movie__info {
     display: flex;
     justify-content: space-between;
     padding: 11px 12px 13px 12px;   
+}
+
+.movie__picture {
+    width: 270px;
+    height: 151px;
 }
 
 .movie__description {
@@ -24,6 +30,10 @@
     font-weight: 500;
     line-height: normal;
     margin: 0;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .movie__duration {

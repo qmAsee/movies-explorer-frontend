@@ -1,7 +1,8 @@
 .movies {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 40px * 2);
+    align-items: center;
+    width: 100%;
     margin: 0 auto 159px auto;
 }
 
@@ -13,6 +14,12 @@
     padding: 0;
     list-style: none;
     margin: 70px auto 80px auto;
+}
+
+.movies__error {
+    font-size: 14px;
+    color: #EE3465;
+    margin: 0;
 }
 
 .movies__more {
