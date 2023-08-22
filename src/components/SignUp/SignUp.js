@@ -19,22 +19,6 @@ export default function SignUp({ isLoading, onSignUp, message, isLoggedIn }) {
 
     const [formValue, setFormValue] = React.useState({});
     
-    const handleSubmit = (evt) => {
-        evt.preventDefault();
-
-        const { name, email, password } = formValue;
-
-        onSignUp(name, email, password)
-    }
-
-    React.useEffect(() => {
-        if (emailError || passwordError || nameError) {
-            setFormValid(false)
-        } else {
-            setFormValid(true)
-        }
-    }, [emailError, passwordError, nameError])
-
     const nameHandler = (e) => {
         setName(e.target.value)
 
@@ -47,7 +31,6 @@ export default function SignUp({ isLoading, onSignUp, message, isLoggedIn }) {
         } else {
             setNameError('')
         }
-
 
         const { name, value } = e.target;
 
@@ -111,11 +94,29 @@ export default function SignUp({ isLoading, onSignUp, message, isLoggedIn }) {
         }
     }
 
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+
+        const { name, email, password } = formValue;
+
+        onSignUp(name, email, password)
+    }
+
     React.useEffect(() => {
         if (isLoggedIn) {
           navigate('/movies', {replace: true})
         }
-      }) 
+      })
+
+    React.useEffect(() => {
+        if (emailError || passwordError || nameError) {
+          setFormValid(false)
+        } else {
+          setFormValid(true)
+        }
+    }, [emailError, passwordError, nameError])
+
+      
 
     return (
         <section className='signup'>

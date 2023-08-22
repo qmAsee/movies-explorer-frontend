@@ -12,18 +12,11 @@ export default function useForm() {
   const handleChange = (evt) => {
     const name = evt.target.name;
     const value = evt.target.value;
-
-    
-
-    console.log(currentUser);
-    console.log(evt.target.value);
     
     setValues({
       ...values,
       [name]: value,
     });
-
-    
 
     setErrors({
       ...errors,

@@ -49,8 +49,6 @@ export default function Account({ onUpdateData, isLoggedIn, onSignOut, updateErr
         }
     }, [currentUser, resetForm])
 
-    
-
     React.useEffect(() => {
         if (!isFormEditable) {
             return

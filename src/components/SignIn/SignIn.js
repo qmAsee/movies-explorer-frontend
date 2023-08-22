@@ -17,41 +17,16 @@ export default function SignIn({ onSignIn, message, isLoggedIn }) {
 
     const [formValue, setFormValue] = React.useState({});
 
-  
-
-  //   const emailHandler = (e) => {
-      
-
-  //     const { name, value } = e.target;
-
-  //     setFormValue({
-  //     ...formValue,
-  //     [name]: value,
-  //     });
-
-  // }
-
-  // const passwordHandler = (e) => {
-      
-
-  //     const { name, value } = e.target;
-
-  //     setFormValue({
-  //     ...formValue,
-  //     [name]: value,
-  //     });
-  // }
-
-  const blurHandler = (e) => {
-      switch (e.target.name) {
-          case 'email':
-              setEmailDirty(true)
-              break
-          case 'password':
-              setPasswordDirty(true)
-              break
-      }
-  }
+    const blurHandler = (e) => {
+        switch (e.target.name) {
+            case 'email':
+                setEmailDirty(true)
+                break
+            case 'password':
+                setPasswordDirty(true)
+                break
+        }
+    }
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
