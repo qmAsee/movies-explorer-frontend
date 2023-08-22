@@ -222,6 +222,7 @@ function App() {
                       onSignUp={handleSignUp}
                       isLoading={isLoading}
                       message={signupMessage}
+                      isLoggedIn={isLoggedIn}
                     />
                   </main>
                 </>
@@ -236,6 +237,7 @@ function App() {
                     <SignIn
                       onSignIn={handleSignIn}
                       message={signinMessage}
+                      isLoggedIn={isLoggedIn}
                     />
                   </main>
                 </>

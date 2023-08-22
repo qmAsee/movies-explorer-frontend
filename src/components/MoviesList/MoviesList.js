@@ -7,7 +7,6 @@ import Preloader from "../Preloader/Preloader";
 import { MAX_WIDTH_MOVIES_AMOUNT,
         MEDIUM_WIDTH_MOVIES_AMOUNT,
         MIN_WIDTH_MOVIES_AMOUNT,
-        MAX_WIDTH,
         MEDIUM_WIDTH,
         MIN_WIDTH,
         MAX_ADDITIONAL_MOVIES,
@@ -22,12 +21,24 @@ export default function MoviesList({ cards, onSaveCard, onDeleteCard, savedCards
     function showedAmount() {
         const displayWidth = window.innerWidth;
 
-        if (displayWidth > MAX_WIDTH) {
+        if (displayWidth > MEDIUM_WIDTH) {
             setShowedMovies(MAX_WIDTH_MOVIES_AMOUNT)
-        } else if (displayWidth > MEDIUM_WIDTH) {
+        } else if (displayWidth <= MEDIUM_WIDTH && displayWidth >= MIN_WIDTH) {
             setShowedMovies(MEDIUM_WIDTH_MOVIES_AMOUNT)
-        } else if (displayWidth > MIN_WIDTH) {
+        } else if (displayWidth <= MIN_WIDTH) {
             setShowedMovies(MIN_WIDTH_MOVIES_AMOUNT)
+        }
+    }
+
+    function showMoreCards() {
+        const displayWidth = window.innerWidth;
+
+        if (displayWidth >= MEDIUM_WIDTH) {
+            setShowedMovies(showedMovies + MAX_ADDITIONAL_MOVIES)
+        } else if (displayWidth < MEDIUM_WIDTH && displayWidth > MIN_WIDTH) {
+            setShowedMovies(showedMovies + MIN_ADDITIONAL_MOVIES)
+        } else if (displayWidth <= MIN_WIDTH) {
+            setShowedMovies(showedMovies + MIN_ADDITIONAL_MOVIES)
         }
     }
 
@@ -43,18 +54,6 @@ export default function MoviesList({ cards, onSaveCard, onDeleteCard, savedCards
 
     function getSavedCard(savedCards, card) {
         return savedCards.find((savedCard) => savedCard.movieId === card.id);
-    }
-
-    function showMoreCards() {
-        const displayWidth = window.innerWidth;
-
-        if (displayWidth > MAX_WIDTH) {
-            setShowedMovies(showedMovies + MAX_ADDITIONAL_MOVIES)
-        } else if (displayWidth > MEDIUM_WIDTH) {
-            setShowedMovies(showedMovies + MIN_ADDITIONAL_MOVIES)
-        } else if (displayWidth < MEDIUM_WIDTH) {
-            setShowedMovies(showedMovies + MIN_ADDITIONAL_MOVIES)
-        }
     }
 
     return (

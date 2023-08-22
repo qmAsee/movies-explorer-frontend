@@ -1,3 +1,5 @@
+import { shortMovieDuration } from "./constanst";
+
 export const moviesApiConfig = {
     baseUrl: 'https://api.nomoreparties.co/beatfilm-movies',
     headers: {
@@ -12,7 +14,7 @@ export const mainApiConfig = {
 export const EMAIL_PATTERN = '[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+\\.{1,1}[a-z]{2,}';
 
 export function filterMovieDuration(movies) {
-    return movies.filter((movie) => movie.duration < 60)
+    return movies.filter((movie) => movie.duration < shortMovieDuration)
 }
 
 export function convertDuration(duration) {

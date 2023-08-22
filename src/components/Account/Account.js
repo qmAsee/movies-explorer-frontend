@@ -19,8 +19,6 @@ export default function Account({ onUpdateData, isLoggedIn, onSignOut, updateErr
         isFormValid,
         values    
     } = useForm()
-
-
     
     function handleEditData() {
         setIsFormEditable(true)

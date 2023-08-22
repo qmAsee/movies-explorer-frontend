@@ -1,9 +1,10 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
-export default function SignUp({ isLoading, onSignUp, message }) {
+export default function SignUp({ isLoading, onSignUp, message, isLoggedIn }) {
+    const navigate = useNavigate()
 
     const [name, setName] = React.useState('')
     const [nameDirty, setNameDirty] = React.useState(false)
@@ -94,7 +95,6 @@ export default function SignUp({ isLoading, onSignUp, message }) {
         ...formValue,
         [name]: value,
         });
- 
     }
 
     const blurHandler = (e) => {
@@ -111,7 +111,11 @@ export default function SignUp({ isLoading, onSignUp, message }) {
         }
     }
 
-
+    React.useEffect(() => {
+        if (isLoggedIn) {
+          navigate('/movies', {replace: true})
+        }
+      }) 
 
     return (
         <section className='signup'>
