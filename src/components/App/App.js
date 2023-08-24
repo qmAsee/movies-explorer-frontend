@@ -16,7 +16,6 @@ import SavedMovies from '../SavedMovies/SavedMovies';
 
 import { mainApi } from '../../utils/MainApi';
 
-
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);

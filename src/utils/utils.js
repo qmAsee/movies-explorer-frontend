@@ -1,5 +1,14 @@
 import { shortMovieDuration } from "./constanst";
 
+import { MAX_WIDTH_MOVIES_AMOUNT,
+    MEDIUM_WIDTH_MOVIES_AMOUNT,
+    MIN_WIDTH_MOVIES_AMOUNT,
+    MAX_WIDTH,
+    MEDIUM_WIDTH,
+    PREMEDIUM_WIDTH_MOVIES_AMOUNT,
+    MIN_WIDTH,
+} from './constanst';
+
 export const moviesApiConfig = {
     baseUrl: 'https://api.nomoreparties.co/beatfilm-movies',
     headers: {
@@ -12,6 +21,20 @@ export const mainApiConfig = {
 }
 
 export const EMAIL_PATTERN = '[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+\\.{1,1}[a-z]{2,}';
+
+export const getMoviesAmount = () => {
+    const displayWidth = window.innerWidth;
+
+    if (displayWidth > MAX_WIDTH) {
+        return MAX_WIDTH_MOVIES_AMOUNT;
+    } else if (displayWidth <= MAX_WIDTH && displayWidth > MEDIUM_WIDTH) {
+        return MEDIUM_WIDTH_MOVIES_AMOUNT;
+    } else if (displayWidth <= MEDIUM_WIDTH && displayWidth > MIN_WIDTH) {
+        return PREMEDIUM_WIDTH_MOVIES_AMOUNT;
+    } else if (displayWidth <= MIN_WIDTH) {
+        return MIN_WIDTH_MOVIES_AMOUNT;
+    }
+}
 
 export function filterMovieDuration(movies) {
     return movies.filter((movie) => movie.duration < shortMovieDuration)

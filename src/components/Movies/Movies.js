@@ -11,6 +11,9 @@ import {
     filterMovieDuration
 } from '../../utils/utils';
 
+import { getMoviesAmount } from '../../utils/utils';
+import { useDebounce } from '../../hooks/useDebounce';
+
 export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCards }) {
 
     const [isLoading, setIsLoading] = useState(false);
@@ -18,6 +21,7 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
     const [filteredCards, setFilteredCards] = useState([]);
     const [initialCards, setInitialCards] = useState([]);
     const [isMovieShort, setIsMovieShort] = useState(false);
+    const [cardsAmount, setCardsAmount] = useState(getMoviesAmount())
 
     function renderFilteredCards(movies, query, shorts) {
         const moviesList = filterMoviesQuery(movies, query, shorts);
@@ -63,6 +67,27 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
         }
 
         localStorage.setItem('shorts', !isMovieShort)
+    }
+
+    function handleResize() {
+        setCardsAmount(getMoviesAmount());
+    }
+
+    const useResize = useDebounce(handleResize);
+
+    useEffect(() => {
+        window.addEventListener('resize', useResize);
+        return () => window.removeEventListener('resize', useResize)
+    }, [useResize])
+
+    useEffect(() => {
+        setFilteredCards(initialCards.slice(0, cardsAmount.totalCards));
+    }, [initialCards, cardsAmount])
+
+    function showMoreCards() {
+        const addedMoviesAmount = initialCards.slice(filteredCards.length, filteredCards.length + cardsAmount.addedCards);
+
+        setFilteredCards([...filteredCards, ...addedMoviesAmount])
     }
 
     useEffect(() => {
@@ -117,6 +142,8 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
                 isSavedCard={false}
                 isLoading={isLoading}
                 isNotFound={isNotFound}
+                showMoreCards={showMoreCards}
+                cardsAmount={initialCards.length}
             />
             
             <Footer />

@@ -12,9 +12,6 @@ export default function SignIn({ onSignIn, message, isLoggedIn }) {
     const [passwordError, setPasswordError] = React.useState('Пароль не может быть пустым')
     const [formValid, setFormValid] = React.useState(false)
 
-    const [formValues, setFormValues] = React.useState({});
-
-
     const [formValue, setFormValue] = React.useState({});
 
     const blurHandler = (e) => {
