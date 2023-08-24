@@ -21,7 +21,8 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
     const [filteredCards, setFilteredCards] = useState([]);
     const [initialCards, setInitialCards] = useState([]);
     const [isMovieShort, setIsMovieShort] = useState(false);
-    const [cardsAmount, setCardsAmount] = useState(getMoviesAmount())
+    const [cardsAmount, setCardsAmount] = useState(getMoviesAmount());
+    const [isMoreButtonVisible, setIsMoreButtonVisible] = useState(true)
 
     function renderFilteredCards(movies, query, shorts) {
         const moviesList = filterMoviesQuery(movies, query, shorts);
@@ -62,11 +63,19 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
 
         if (!isMovieShort) {
             setFilteredCards(filterMovieDuration(initialCards))
+            console.log(filterMovieDuration(initialCards)) // тут в массиве только короткометражки
         } else {
-            setFilteredCards(initialCards);
+            setFilteredCards(initialCards.slice(0, cardsAmount.totalCards));
+            console.log(initialCards)
         }
-
+        
         localStorage.setItem('shorts', !isMovieShort)
+    }
+    
+    function showMoreCards() {
+        const addedMoviesAmount = initialCards.slice(filteredCards.length, filteredCards.length + cardsAmount.addedCards);
+
+        setFilteredCards([...filteredCards, ...addedMoviesAmount])
     }
 
     function handleResize() {
@@ -82,13 +91,18 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
 
     useEffect(() => {
         setFilteredCards(initialCards.slice(0, cardsAmount.totalCards));
-    }, [initialCards, cardsAmount])
 
-    function showMoreCards() {
-        const addedMoviesAmount = initialCards.slice(filteredCards.length, filteredCards.length + cardsAmount.addedCards);
+        if (localStorage.getItem('movies')) {
+            const movies = JSON.parse(localStorage.getItem('movies'));
+            setInitialCards(movies)
 
-        setFilteredCards([...filteredCards, ...addedMoviesAmount])
-    }
+            if (localStorage.getItem('shorts') === 'true') {
+                setFilteredCards(filterMovieDuration(movies))
+            } else {
+                setFilteredCards(movies.slice(0, cardsAmount.totalCards))
+            }
+        } 
+    }, [cardsAmount])
 
     useEffect(() => {
         if (localStorage.getItem('movie-query')) {
@@ -111,17 +125,8 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
     }, [])
 
     useEffect(() => {
-        if (localStorage.getItem('movies')) {
-            const movies = JSON.parse(localStorage.getItem('movies'));
-            setInitialCards(movies)
-
-            if (localStorage.getItem('shorts') === 'true') {
-                setFilteredCards(filterMovieDuration(movies))
-            } else {
-                setFilteredCards(movies)
-            }
-        } 
-    }, []);
+        setIsMoreButtonVisible(filteredCards.length < initialCards.length);
+    }, [filteredCards, initialCards])
 
     return (
         <section className='movies'>
@@ -142,9 +147,13 @@ export default function Movies({ isLoggedIn, onSaveCard, onDeleteCard, savedCard
                 isSavedCard={false}
                 isLoading={isLoading}
                 isNotFound={isNotFound}
-                showMoreCards={showMoreCards}
-                cardsAmount={initialCards.length}
             />
+            { isMoreButtonVisible ? (
+                        <button type='button' className='movies__more' onClick={showMoreCards}>
+                            Ещё
+                        </button>
+                    ) : (null)
+            }  
             
             <Footer />
 

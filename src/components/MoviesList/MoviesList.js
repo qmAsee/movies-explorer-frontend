@@ -3,7 +3,7 @@ import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Preloader from "../Preloader/Preloader";
 
-export default function MoviesList({ cards, onSaveCard, onDeleteCard, savedCards, reqError, isSavedCard, isLoading, isNotFound, showMoreCards, cardsAmount }) {
+export default function MoviesList({ cards, onSaveCard, onDeleteCard, savedCards, reqError, isSavedCard, isLoading, isNotFound }) {
 
     function getSavedCard(savedCards, card) {
         
@@ -29,14 +29,7 @@ export default function MoviesList({ cards, onSaveCard, onDeleteCard, savedCards
                                 key={isSavedCard ? card._id : card.id}
                             />
                         ))}
-                    </ul>
-
-                    {cards.length < cardsAmount ? (
-                        <button type='button' className='movies__more' onClick={showMoreCards}>
-                            Ещё
-                        </button>
-                    ) : (null)
-                    }    
+                    </ul>  
                 </> 
             )}
         </section>
