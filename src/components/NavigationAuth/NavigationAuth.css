@@ -1,0 +1,133 @@
+.navbar {
+    display: flex;
+}
+
+.navbar_auth {
+    gap: 16px;
+    padding-left: 50px;
+}
+
+.navbar__films {
+    display: flex;
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    text-decoration: none;
+    align-items: center;
+    transition: opacity .1s linear;
+}
+
+.navbar__films:hover {
+    opacity: .8;
+    transition: opacity .1s linear;
+}
+
+.navbar__films_active {
+    font-weight: 500;
+}
+
+.me {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-decoration: none;
+    padding-right: 3px;
+    transition: opacity .1s linear;
+}
+
+.navbar__me:hover {
+    opacity: .8;
+    transition: opacity .1s linear;
+}
+
+.me__account {
+    color: #FFF;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 12px;
+    padding-bottom: 2px;
+}
+
+.me__acclink {
+    display: flex;
+    width: 26px;
+    height: 26px;
+    background-color: #313131;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.me__guard {
+    background-image: url('../../images/account-icon.svg'); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 10.383px;
+    height: 10.669px;   
+}
+
+.burger {
+    display: none;
+}
+
+.navbar__burger:hover {
+   opacity: .9;
+   transition: opacity .1s linear; 
+}
+
+@media screen and (max-width: 768px) {  
+    .navbar__films {
+        display: none;
+    }
+
+    .navbar__menu {
+        display: none;
+    }
+    
+    .me {
+        display: none;
+    }
+
+    .me__account {
+        display: none;
+    }
+
+    .me__guard {  
+        display: none;
+    }
+
+    .me__acclink {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        background-color: transparent;
+        border: none;
+        background-image: url('../../images/burger-menu.svg');
+        background-position-y: 50%;
+        background-position-x: 100%;
+        width: 38px;
+        height: 38px;
+        padding: 0;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: opacity .1s linear; 
+    }
+
+    .burger:hover {
+        opacity: .65;
+        transition: opacity .1s linear; 
+     }
+    
+}
+
+@media screen and (max-width: 360px) {
+    .burger {
+        width: 30px;
+        height: 32px;
+        background-position-y: 27%;
+    }
+}

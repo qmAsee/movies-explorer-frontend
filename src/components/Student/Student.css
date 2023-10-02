@@ -1,0 +1,318 @@
+.student {
+    background: #202020;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 184px auto;
+}
+
+.student__works {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.student__project {
+    padding: 0;
+    height: 69px;
+    border-bottom: 1px solid #424242;
+    width: calc(100% - 70px * 2);
+    margin: 0 auto 20px auto;
+}
+
+.student__title {
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.88px;
+    display: flex;
+    margin: 112px auto 0 auto;
+    width: calc(100% - 70px * 2);
+    border-bottom: white 1px solid;
+    padding-bottom: 23px;
+}
+
+.student__about {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 70px * 2);
+    margin: 66px auto 0 auto;
+}
+
+.student__description {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+}
+
+.student__name {
+    margin: 0;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px; 
+    letter-spacing: -2px;
+}
+
+.student__subtitle {
+    margin: 18px 0 0 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.student__info {
+    margin: 27px 0 0 0;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    white-space: pre-line;
+}
+
+.student__photo {
+    background-image: url('../../images/me2.png');
+    min-width: 270px;
+    height: 327px;
+    border-radius: 10px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.student__github {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    margin: 98px 0 0 0;
+    width: fit-content;
+    transition: opacity .08s linear;
+}
+
+.student__github:hover {
+    opacity: .70;
+    transition: opacity .1s linear;
+}
+
+.student__portfolio {
+    color: #8B8B8B;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 101px auto 50px auto;
+    width: calc(100% - 70px * 2);
+}
+
+.student__link {
+    text-decoration: none;
+    color: white;
+    width: calc(100% - 70px * 2);
+    border-bottom: 1px #424242 solid;
+}
+
+.student__project:last-of-type {
+    border-bottom: none;
+    margin: 0 auto;
+}
+
+.student__work {
+    display: flex;
+    justify-content: space-between;
+    transition: opacity .08s linear;
+}
+
+.student__work:hover {
+    opacity: .7;
+    transition: opacity .08s linear;
+}
+
+.student__arrow {
+    background-image: url('../../images/arrow.svg');
+    width: 29px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.student__site {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -1.2px; 
+}
+
+@media screen and (max-width: 1040px) {
+
+    .student__photo {
+        margin-left: 49px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .student {
+        margin: 0 auto 149px auto;
+    }
+
+    .student__title {
+        width: calc(100% - 50px * 2);
+        margin: 92px auto 0 auto;
+        padding-bottom: 23px;
+    }
+
+    .student__about {
+        width: calc(100% - 50px * 2);
+        margin: 66px auto 0 auto;
+    }
+
+    .student__name {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 40px;
+    }
+
+    .student__subtitle {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 16px 0 0 0;
+    }
+
+    .student__info {
+        margin: 20px 0 0 0;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    .student__github {
+        margin: 87px 0 0 0;
+    }
+
+    .student__photo {
+        min-width: 255px;
+        height: 307px;
+    }
+
+    .student__portfolio {
+        color: #8B8B8B;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 91px auto 50px auto;
+        width: calc(100% - 50px * 2);
+    }
+
+    .student__project {
+        border-bottom:  #E6E6E6 1px solid;
+        width: calc(100% - 50px * 2);
+        margin: 0 auto 20px auto;
+
+    }
+
+    .student__site {
+        font-size: 28px;
+        font-style: normal;
+        line-height: 50px;
+        letter-spacing: -1.12px; 
+    }
+
+    .student__arrow {
+        width: 27px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .student__about {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 60px auto 0 auto;
+    }
+
+    .student__photo {
+        width: 292px;
+        height: 352px;
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+
+    .student__github {
+        margin: 40px 0 0 0;
+    }
+
+    .student__portfolio {   
+        margin: 70px auto 40px auto;
+    }
+
+    .student__site {
+        font-size: 18px;
+        font-weight: 400;
+        font-style: normal;
+        line-height: 28px;
+        letter-spacing: -0.72px; 
+    }
+
+    .student__link {
+        height: 48px;
+    }
+    
+}
+
+@media screen and (max-width: 400px) {
+
+    .student {
+        margin: 0 auto 130px auto;
+    }
+
+    .student__title {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: -0.72px;  
+        width: calc(100% - 14px * 2);
+        margin: 51px auto 0 auto;
+        padding-bottom: 29px;
+    }
+
+    .student__about {
+        width: calc(100% - 14px * 2);
+    }
+
+    .student__name {
+        font-size: 30px;
+        line-height: normal;
+        letter-spacing: -1.2px;
+    }
+
+    .student__subtitle {
+        margin: 19px 0 0 0;
+    }
+
+    .student__info {
+        font-size: 11px;
+        line-height: 16px; 
+    }
+
+    .student__portfolio {
+        width: calc(100% - 14px * 2);
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .student__project {
+        width: calc(100% - 14px * 2);
+        height: 46px;
+        margin: 0 auto 21px auto;
+    }
+
+    .student__arrow {
+        width: 18px;
+        height: 28px;
+        background-size: 60%; 
+        background-position-x: 45%;
+        background-position-y: 45%;     
+    }
+}

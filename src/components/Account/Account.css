@@ -1,0 +1,242 @@
+.account  {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 70px * 2);
+    margin: 0 auto;
+    padding-top: 74px;
+}
+
+.account__title {
+    margin: 0 0 123px 0;
+    text-align: center;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.account__info {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 218px auto;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.account__box {
+    display: flex;
+    width: 410px;
+    justify-content: space-between;
+}
+
+.account__box:nth-of-type(1) {
+   border-bottom: 1px solid #424242;
+   padding-bottom: 14px;
+   margin-bottom: 2px;
+}
+
+.account__name {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.account__username {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    text-align: right;
+    border-radius: 20px;
+    padding-right: 6px;
+    width: 200px;
+}
+
+.account__username::placeholder {
+    color: white;
+}
+
+.account__username:focus {
+    background-color: rgba(90, 90, 90, .5);
+    outline: none;
+}
+
+.account__email {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.account__useremail {
+    color: #FFF;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    text-align: right;
+    border-radius: 20px;
+    padding-right: 6px;
+    width: 200px;
+}
+
+.account__useremail::placeholder {
+    color: white;
+}
+
+.account__useremail:focus {
+    background-color: rgba(90, 90, 90, .5);
+    outline: none;
+}
+
+.account__error {
+    margin: 0;
+    color: #EE3465;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 400px;
+}
+
+.account__unsuccess {
+    margin: 0;
+    color: #EE3465;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.account__message {
+    margin: 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    opacity: 0;
+}
+
+.account__message_fail {
+    color: #EE3465;
+    opacity: 1;
+}
+
+.account__message_success {
+    color:green;
+    opacity: 1;
+}
+
+.account__line {
+    height: 1px;
+    background: #424242;
+}
+
+.account__edit {
+    width: fit-content;
+    background: none;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 auto 15px auto;
+    cursor: pointer;
+    transition: opacity .1s linear;
+}
+
+.account__edit_disabled {
+    color: grey;
+    cursor: default;
+}
+
+.account__edit:hover {
+    opacity: .9;
+    transition: opacity .1s linear;
+}
+
+.account__exit {
+    color: #EE3465;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+    transition: opacity .1s linear;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.account__exit:hover {
+    opacity: .9;
+    transition: opacity .1s linear;
+}
+
+.account__form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.account__exit-button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+@media screen and (max-width: 768px) {
+    .account  {
+        padding-top: 254px;
+    }
+
+    .account__title  {  
+        margin: 0 0 96px 0;
+    }
+
+    .account__info  {  
+        margin: 0 auto 208px auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .account  {
+        width: calc(100% - 30px * 2);
+        padding-top: 88px;
+    }
+
+    .account__box {
+        width: 260px;
+    }
+
+    .account__title  {  
+        margin: 0 0 80px 0;
+    }
+
+    .account__info  {  
+        margin: 0 auto 376px auto;
+    }
+
+    .account__edit {
+        font-size: 12px;
+        margin: 0 auto 15px auto;
+    }
+    
+    .account__exit {
+        font-size: 12px;
+    }
+}
